@@ -2,30 +2,25 @@ services:
   - type: web
     name: backend
     env: node
-    plan: free
     buildCommand: cd backend && npm install
-    startCommand: cd backend && npm start server
+    startCommand: cd backend && npm start
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 5000
       - key: MONGODB_URI
-        value: mongodb://localhost:27017/exampaper
+        value: your_mongodb_url_here
     autoDeploy: true
     buildFilter:
       paths:
         - backend/**
 
-  - type: web
+  - type: static
     name: frontend
-    env: static
-    plan: free
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/dist
     envVars:
       - key: REACT_APP_API_URL
-        value: https://backend-service-name.onrender.com
+        value: https://your-backend-service-name.onrender.com
     buildFilter:
       paths:
         - frontend/**
