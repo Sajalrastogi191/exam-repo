@@ -39,9 +39,11 @@ git clone https://github.com/your-username/exam-repo.git
 cd exam-repo
 
 # Install frontend dependencies
-cd client
+cd frontend
 npm install
+npm start
 
 # Install backend dependencies
-cd ../server
+cd backend
 npm install
+npm start server
