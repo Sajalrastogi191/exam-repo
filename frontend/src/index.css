@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50;
+}
+
+.pdf-viewer {
+  width: 100%;
+  overflow-x: auto; /* For smaller screens */
+}
+
+.react-pdf__Page__canvas {
+  margin: 10px auto;
+}
